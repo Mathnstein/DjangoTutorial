@@ -8,10 +8,10 @@ This follows the tutorial on [DjangoProjects.com](https://docs.djangoproject.com
     - *In VS Code* create a folder called `.vscode `.
     - *In VS Code* add a file `settings.json` with
 ```json
-    {
-        "python.pythonPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
-        "python.venvPath": "${workspaceFolder}\\.venv"
-    }
+{
+    "python.pythonPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    "python.venvPath": "${workspaceFolder}\\.venv"
+}
 ```
 3. Make sure you have a .gitignore set up to ignore everything above. Also add the following to avoid getting many junk files in the repository.
 ```
@@ -71,3 +71,14 @@ from django.urls import reverse
 response = client.get(reverse('polls:index'))
 response.status_code
 ```
+
+## Part 6 - CSS and style sheets
+There is not much content here, to have static files be served by Django, there needs to be a *STATIC_ROOT* defined. This is just a global location that Django will keep updated with `python manage.py collectstatic`.
+
+To load a *CSS* file into an html file via Django, we will use
+```html
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">}
+```
+Be careful with the namespace of stylesheets just like with the html templates.
