@@ -13,7 +13,13 @@ This follows the tutorial on [DjangoProjects.com](https://docs.djangoproject.com
         "python.venvPath": "${workspaceFolder}\\.venv"
     }
 ```
-3. Make sure you have a .gitignore set up to ignore everything above.
+3. Make sure you have a .gitignore set up to ignore everything above. Also add the following to avoid getting many junk files in the repository.
+```
+.venv
+.vscode
+__pycache__
+*.pyc
+```
 4. Setup the required packages with `pip install -r requirements.txt`
 
  If you are saving into your own git to follow along, delete the folder `DjangoTutorialCode` as you will be making this. ALso if you are 
@@ -43,3 +49,8 @@ To run and text functionality of the models that are now in the database, we can
 To access the admin side of the app you will need to create a superuser and log its credentials with `python manage.py createsuperuser`. Once that exists, you can log into the internal workings of the app through [](http://127.0.0.1:8000/admin/).
 
 Once you have explored the features and have added your models to the admin site, then you are ready to push up your changes.
+
+## Part 3 - User-Facing Views
+To incorporate python and html, we will write html files that take in javascript-like code but is interpreted as python. Inside html we can have python based functions and object recognition. Using proper templating and url name spacing is key to making sure the output looks nice and the code is unambiguous .
+
+## Part 4 - Form processing

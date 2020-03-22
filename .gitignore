@@ -1,4 +1,6 @@
 .venv
 .vscode
-**/__pycache__/**
-**/*cpython-37**
+*.pyc
+__pycache__
+
+
