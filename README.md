@@ -54,3 +54,20 @@ Once you have explored the features and have added your models to the admin site
 To incorporate python and html, we will write html files that take in javascript-like code but is interpreted as python. Inside html we can have python based functions and object recognition. Using proper templating and url name spacing is key to making sure the output looks nice and the code is unambiguous .
 
 ## Part 4 - Form processing
+Here we structure the voting form better and actually get interactive controls. This all happens on the html side using embedded python. 
+
+We also streamline the view code - promote the former functions to classes that enherit generic properties.
+
+## Part 5 - Automated testing
+Test Test Test! We can use the built in testing infrastructure in `polls/tests.py`. Here adding a class to each view/model you want to test compartmentalizes the testing. Each test must begin with *test* and the more the merrier.
+
+You can simulate a testing environment in console using `python manage.py shell` to open the API and run the following
+```python
+from django.test.utils import setup_test_environment
+setup_test_environment()
+from django.test import Client
+client = Client()
+from django.urls import reverse
+response = client.get(reverse('polls:index'))
+response.status_code
+```
