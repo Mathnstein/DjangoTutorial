@@ -82,3 +82,8 @@ To load a *CSS* file into an html file via Django, we will use
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">}
 ```
 Be careful with the namespace of stylesheets just like with the html templates.
+
+## Part 7 - Editing Admin display
+The default admin access won't cut it for all apps and so here we edit the display, how to interact with models and relate them, and how to customize the html file.
+
+This concludes this follow-along. I will now reuse this code to a separate financial calculator I am adding to [my website](https://mathnstein.github.io/).
